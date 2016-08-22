@@ -1,0 +1,20 @@
+{
+  "name": "fetch-imgs.js",
+  "version": "1.0.0",
+  "description": "fetch image",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fetch",
+    "image"
+  ],
+  "author": "Jade Gu",
+  "license": "MIT",
+  "dependencies": {
+    "async-to-gen": "^1.0.5",
+    "cheerio": "^0.20.0",
+    "node-fetch": "^1.6.0"
+  }
+}
