@@ -29,12 +29,12 @@ async function saveImg(img) {
 	res.body.pipe(writeStream)
 }
 
-async function fetchContent(url) {
+async function fetchImgs(url) {
 	var res = await fetch(url)
 	var content = await res.text()
 	var imgs = parseImgs(content)
 	imgs.forEach(saveImg)
 }
 
-fetchContent(url)
+fetchImgs(url)
 .catch(error => console.error(error))

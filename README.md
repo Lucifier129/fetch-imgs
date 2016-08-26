@@ -80,12 +80,12 @@ async function saveImg(img) { // async 语法，支持同步语法写异步逻�
 
 ```javascript
 // url 为要爬的页面地址
-async function fetchContent(url) {
+async function fetchImgs(url) {
 	var res = await fetch(url) // fetch-api 返回 promise，await 兜住，等完成后再执行下面的代码
 	var content = await res.text() // fetch-api 的 res.text() 也返回 promise，也用 await 兜住
 	var imgs = parseImgs(content) // 解析出图片列表
 	imgs.forEach(saveImg) // forEach 一个循环将所有图片保存到本地
 }
-fetchContent(url) // 调用主函数，开始抓图
+fetchImgs(url) // 调用主函数，开始抓图
 .catch(error => console.error(error)) // promise.catch 输出错误日志
 ```
