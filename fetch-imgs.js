@@ -14,7 +14,9 @@ function parseImgs(content) {
 	var $ = cheerio.load(content)
 	var imgs = []
 	$(selector).each(function(index, img) {
-		imgs.push($(img).attr('src'))
+		var src = $(img).attr('src')
+		if (src.indexOf('//') === 0) src = 'http:' + src
+		imgs.push(src)
 	})
 	return imgs
 }
